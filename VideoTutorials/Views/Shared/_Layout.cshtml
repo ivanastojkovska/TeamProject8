@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./Content/Images/logo_fav.png"> 
+    <title>@ViewBag.Title - Black Rabbits Application</title>
+    
+
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <link href="~/Content/freelancer.css" rel="stylesheet" />
+    <link href="~/Content/FontAwesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    >
+  @* @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+*@ 
+
+</head>
+<body id="page-top" class="index">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*<img class="img-responsive" onclick="location.href='@Url.Action("Index", "Home")'" src="~/Content/Images/logo.png" />
+                  ----- LOGO VO NAV BAR --- KOGA KE NAPRAVIME TRANSPARENTNO LOGO KE GO POSTAVIME  *@
+
+                @Html.ActionLink("Black Rabbits Video Tutorials", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#home">Home</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About Us</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#latestVideos">Latest Videos</a>
+                    </li>
+
+                    @Html.Partial("_LoginPartial")
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="container body-content AppBody">
+        @RenderBody()
+    </div>
+    <footer>
+
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Black Rabbits 2015
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>    
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
